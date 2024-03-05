@@ -1,0 +1,2172 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Flavour</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <style>
+        .product-img {
+
+            height: 300px;
+            transition: 0.8s ease;
+        }
+        
+        .cart-title{
+            margin-top: -50px;
+        }
+        /* .arrival{
+            opacity: 0;
+              animation: arrival .5s ease forwards;
+              animation-delay: calc(.2s*var(--i));
+              transition: .5s ease;
+        }
+        @keyframes arrival {
+              0%{
+                  transform: translateY(100px);
+                  opacity: 0;
+              }
+              100%{
+                  transform: translateY(0);
+                  opacity: 1;
+              }
+          } */
+ 
+          /* Landing Page Started  */
+
+           .product-price{
+             position: fixed;
+             top: 5;
+             left: 5;
+             
+           }
+
+           .product-title{
+            margin-top: -30px;
+           }
+        
+    </style>
+        <link rel="stylesheet" href="Style.css">
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+            <link rel="icon" type="image/x-icon" href="Images/flavours-removebg-preview.png">
+
+    </head>
+
+    <!-- box icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="navbar.css">
+    <body>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="header-logo">
+                            <a href="navbar.html">
+                                <!-- logo is here -->
+                                <img class="logo" src="Images/flavours-removebg-preview.png"
+                                    width="160" height="36" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="main-navigation">
+                            <!-- button is here -->
+                            <button class="menu-toggle">
+                                <span>
+
+                                </span>
+                                <span>
+
+                                </span>
+                            </button>
+                            <!-- button is here -->
+                            <nav class="header-menu">
+                                <!-- ul product here -->
+                                <ul class="menu food-nav-menu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                    <li><a href="#shop">Shop</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#menu">Categories <i
+                                                class="las la-angle-down"></i>
+                                        </a>
+                                        <ul class="submenu2">
+                                            <li><a href="#best seller">best seller</a></li>
+                                            <li><a href="#newarrival">new
+                                                    arrivals</a></li>
+                                            <li><a href="#hotdeal">hot deals</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                </ul>
+                                
+                               
+                                <!-- ul prouduct end -->
+                            </nav>
+                            <!-- CART ICON  -->
+                           
+
+            <!-- CART  -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+
+                <!-- CONTENT  -->
+                <div class="cart-content">
+
+
+                </div>
+
+                <!-- TOTAL   -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <!-- BUY BUTTON  -->
+                <button type="button" class="btn-buy" data-bs-toggle="modal" data-bs-target="#checkout"  onclick="buy()">Buy Now</button>
+                <!-- CART CLOSE  -->
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                
+                
+            </div>
+           
+            <i class='bx bx-shopping-bag' id="cart-icon" style="margin: 80px;" ></i>
+        </header>
+        
+
+          <!--Checkout Modal -->
+  <div class="modal fade" id="checkout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <header>
+                <div class="container">
+                   <div class="row">
+                    <div class="left col-lg-6  col-sm-6  col-6">
+                        <h3>BILLING ADDRESS</h3>
+                        <form class="form">
+                            Full name
+                            <input type="text" name="" placeholder="Enter name"  id="name" required>
+                            Email
+                            <input type="email" name="" placeholder="Enter email" id="email" required>
+            
+                            Address
+                            <input type="text" name="" placeholder="Enter address"  id="address" required>
+                            
+                            City
+                            <input type="text" name="" placeholder="Enter City" id="city" required>
+                            <div id="zip">
+                                <label>
+                                    State
+                                    <select id="state">
+                                        <option>Choose State..</option>
+                                        <option>Pakistan</option>
+                                        <option>India</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                    </select>
+                                </label>
+                                    <label>
+                                   <label style="margin-left: 10px;" for=""> Zip code</label>
+                                    <input type="number" name="" placeholder="Zip code" id="zipcode">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right col-lg-6 col-sm-6  col-6">
+                        <h3>PAYMENT</h3>
+                        <form class="form">
+                            Accepted Card <br>
+                            <img src="chekout images/card1.png" width="100">
+                            <img src="chekout images/card2.png" width="50">
+                            <br><br>
+            
+                            Credit card number
+                        <input type="number" name="" placeholder="Enter card number" id="credit">
+                            
+                            Exp month
+                            <input type="number" name="" placeholder="Enter Month" id="month">
+                            <div id="zip">
+                                <label>
+                                    Exp year
+                                    <select id="year">
+                                        <option>Choose Year..</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                    </select>
+                                </label>
+                                    <label id="cvv" >
+                                        CVV
+                                     <!-- <label style="margin-left: 10px; margin-top: 20px;" for="">CVV</label> -->
+
+                                    <input type="number" name="" placeholder="CVV" id="Cvv">
+                                </label>
+                            </div>
+                        </form>
+                        <button class="checkout" type="submit" onclick="setdata()">Checkout</button>
+                    </div>
+                   </div>
+                </div>
+            </header>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  
+             <!--Checkout Modal end -->
+
+               <!-- paragraph for Get data from local storage  -->
+             <p class="name" id="head"></p>
+             <!-- paragraph for Get data from local storage end  -->
+
+     <!-- Landing page started  -->
+     <div class="container-fluid" style="margin-top: -50px; ">
+        <div class="row">
+            <div class="d1 col-lg-12  col-sm-12">
+                <h1> Explore the Finest <br> <span id="element"> Organic Flavours </span></h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    <br> Repellat ad odio dolorum? Qui, ipsa odio?
+                </p>
+                <button class="btn"><a href>Learn More</a></button>
+                <button class="btn1 d-flex"><a href>Shop Now</a></button>
+            </div>
+            <!-- <div class="d2 mt-5 col-lg-6 col-sm-6">
+            <img src="Images/666-removebg-preview.png" alt=""
+                style="background-size: 100% 100%; margin-left: -100px;">
+        </div> -->
+        </div>
+    </div>
+    <!-- Landing page End  -->
+
+        <!-- New Arrival Section Started  -->
+        <section class="Product" id="newarrival"   style="margin-top: 150px;">
+
+            <div class="container" id="arrival">
+                <div class="row">
+                    <h1 class="h1 text-center mt-5" style="font-size: 45px;">New
+                        <span style="color: green;">Arrivals</span></h1>
+                    <h6 class="h6 text-center"
+                        style="color: green; font-weight: 500;">Be Healthy
+                        Organic Food</h6>
+
+                    <div class=" arrival col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                        data-aos-duration="1000">
+                             <div class="card-body">
+                                <img src="Images/fruits/apple.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#new" style="height: 220px;">
+                             <h2 class="product-title" >Apple</h2>
+                                  <span style=" font-size: 20px;">$12.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' id="add-cart"   style="margin-left: 150px; font-size: 20px;"></i>
+                           </div> 
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="new" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="new col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/apple.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="new col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Apple</h1>
+                                                <p class="card-text">Crisp red apples approx.(10 pcs) per KGs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                   
+                    <div class=" arrival col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/patatos.png" alt="" class="product-img"  style="height: 240px;" data-bs-toggle="modal"
+                                data-bs-target="#new1">
+                             <h2 class="product-title">potatos</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                   
+                    <!-- Modal -->
+                    <div class="modal fade" id="new1" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="new col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/patatos.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="new col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Potatos</h1>
+                                                <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <div class="arrival col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/fruits/strawberry.png" alt="" class="product-img"  style="height: 240px;" data-bs-toggle="modal"
+                                data-bs-target="#new2">
+                             <h2 class="product-title">Strawberry</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$11.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                    </div>
+                   
+                    <!-- Modal -->
+                    <div class="modal fade" id="new2" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="new col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/strawberry.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="new col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Rasberry</h1>
+                                                <p class="card-text">Rasberry 20-30 pcs per KGs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <div class="arrival col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/chilli1-.png" alt="" class="product-img"  style="height: 240px;" data-bs-toggle="modal"
+                                data-bs-target="#new3">
+                             <h2 class="product-title">Chilli powder</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$14.00</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+                        
+                    <!-- Modal -->
+                    <div class="modal fade" id="new3" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="new col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/chilli1-.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="new col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Spanish Paprika</h1>
+                                                <p class="card-text">Grounded Spanish Paprika</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                   
+                </div>
+            </div>
+        </section>
+        <!-- New Arrival Section End  -->
+
+        <!-- Shop Section Started  -->
+        <section class="shop" id="shop">
+            <h1 class="h1 text-center"
+                style="font-size: 45px; margin-top: 100px;">Explore Our <span
+                    style="color: green;">Store</span></h1>
+            <h6 class="h6 text-center" style="color: green; font-weight: 500;">Be
+                Healthy Organic Food</h6>
+                
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12">
+                                <button class="filter-btn"  onclick="spice()">Spices</button>
+                                <button class="filter-btn"  onclick="vegetable()">Vegetables</button>
+                                <button class="filter-btn" onclick="fruit()">Fruits</button>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- <div class="col-lg-6 col-sm-12">
+                                <input type="search" class="form-control" placeholder="Search item">
+                                
+                            </div> -->
+                        </div>
+                    </div>
+               
+            <div class="container">
+                           
+                <div class="row">
+                    <hr class="mt-3" style="color: green;">
+                    <!-- Fruits Section Started   -->
+                    <div class=" fruit  banana col-lg-3 col-sm-6 col-6 ">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/fruits/banana.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#fruit"  style="height: 240px;">
+                             <h2 class="product-title">Banana</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$11.56</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                       
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="fruit" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/banana.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Banana</h1>
+                                                <p class="card-text">Ripe Bananas 12pcs Approx.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class=" fruit passion-fruit col-lg-3 col-sm-6 col-6 ">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                             <div class="card-body">
+                                <img src="Images/fruits/passion_fruit.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#fruit1"  style="height: 240px;">
+                             <h2 class="product-title">Passion fruit</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$18.88</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="fruit1" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/passion_fruit.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Passion fruit</h1>
+                                                <p class="card-text">Exotic Passion friut 8pcs per KGs approx.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="fruit col-lg-3 col-sm-6 col-6 ">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/fruits/rasberry.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#fruit2"  style="height: 240px;">
+                             <h2 class="product-title">Rasberry</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$5.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                       
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="fruit2" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/rasberry.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Rasberry</h1>
+                                                <p class="card-text">Rasberry 20-30 pcs per KGs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <div class="fruit col-lg-3 col-sm-6 col-6 ">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/fruits/apple.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#fruit3"  style="height: 240px;">
+                             <h2 class="product-title">Apple</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="fruit3" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/apple.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Apples</h1>
+                                                <p class="card-text">Red crip Apples 10-12 pcs per KG approx.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <!-- Fruits Section End  -->
+
+                    <!-- Vegetable Section Started  -->
+                    <div class="vegetable col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/chinese_cabdge.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#vege"  style="height: 240px;">
+                             <h2 class="product-title">Chinese cabbage</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$10.00</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="vege" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/chinese_cabdge.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title"> Chinese Cabbage</h1>
+                                                <p class="card-text">Chinese cabbage best for kimchi 1 pcs approx. 1kg</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="vegetable col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/patatos.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#vege1"  style="height: 240px;">
+                             <h2 class="product-title">Potatos</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="vege1" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/patatos.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Potatos</h1>
+                                                <p class="card-text">white potatos </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <div class="vegetable col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/purple_cabdge.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#vege2"  style="height: 240px;">
+                             <h2 class="product-title">Purple Cabbge</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.12</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="vege2" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/purple_cabdge.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Purple Cabbage</h1>
+                                                <p class="card-text">purple cabbage 2-4 pcs per KG approx.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <div class="vegetable col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/white_onine.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#vege3"  style="height: 240px;">
+                             <h2 class="product-title">White onion</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$18.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="vege3" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/white_onine.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">White onions</h1>
+                                                <p class="card-text">White onions </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                    <!-- Vegetable Section End  -->
+
+                    <!-- Spices Section Started  -->
+                    <div class="spice col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/spanish_paprika1.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#spice"  style="height: 240px;">
+                             <h2 class="product-title">Spanish Paprika</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$19.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="spice" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/spanish_paprika1.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Spanish Paprika</h1>
+                                                <p class="card-text"> Grounded Spanish Paprika </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="spice col-lg-3 col-sm-6 col-6  mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/turmeric.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#spice1"  style="height: 240px;">
+                             <h2 class="product-title">Turmeric </h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$19.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="spice1" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/turmeric.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Spanish Paprika</h1>
+                                                <p class="card-text"> Grounded Spanish Paprika </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                <div class="spice col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/chilli1-.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#spice2"  style="height: 240px;">
+                             <h2 class="product-title">Chilli powder</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                     <div class="modal fade" id="spice2" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/chilli1-.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Chilli powder</h1>
+                                                <p class="card-text">Chilli powder for an absolute hit to taste buds</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end  -->
+                     <div class="spice col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/cinnamon_tea.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#spice3"  style="height: 240px;">
+                             <h2 class="product-title">Cinnamon</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="spice3" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/cinnamon_tea.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Cinnemon</h1>
+                                                <p class="card-text">Cinnamon for tea</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Modal end -->
+                    <!-- Spice Section End  -->
+
+                </div>
+            </div>
+        </section>
+        <!-- Shop Section End  -->
+
+        <!-- Best Seller Section Started  -->
+        <section class="Product">
+
+            <div class="container">
+                <div class="row">
+                    <h1 class="h1 text-center mt-5" style="font-size: 45px;"  id="best seller">Best
+                        <span style="color: green;" >Seller</span></h1>
+                    <h6 class="h6 text-center"
+                        style="color: green; font-weight: 500;">Be Healthy
+                        Organic Food</h6>
+
+                    <div class="seller col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                        data-aos-duration="1000">
+                             <div class="card-body">
+                                <img src="Images/fruits/watermelon.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#best" style="height: 200px;">
+                             <h2 class="product-title" >watermelon</h2>
+                                  <span style=" font-size: 20px;">$12.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                           </div> 
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="best" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="new col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/fruits/watermelon.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="new col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Grapes</h1>
+                                                <p class="card-text"> full of jucies 1 psc. approx 1.5kg </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                   
+                    <div class="seller col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/fruits/pineapple.png" alt="" class="product-img"  style="height: 240px;"  data-bs-toggle="modal"
+                                data-bs-target="#best1">
+                             <h2 class="product-title">Pineapple</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$12.99</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                   
+                     <!-- Modal -->
+                     <div class="modal fade" id="best1" tabindex="-1"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h1 class="modal-title fs-5"
+                                     id="exampleModalLabel">Product detail</h1>
+                                 <button type="button" class="btn-close"
+                                     data-bs-dismiss="modal"
+                                     aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <div class="row">
+                                     <div class="new col-lg-6 col-sm-6">
+                                         <img class="card-img-top"
+                                             src="Images/fruits/pineapple.png"
+                                             alt="Title" />
+                                         <div class="card-body">
+
+                                         </div>
+                                     </div>
+                                     <div class="new col-sm-6">
+
+                                         <div class="card-body">
+                                             <h1 class="card-title">Orange</h1>
+                                             <p class="card-text">full of flavour and jucies 2pcs aprrox 3kgs.</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button"
+                                     class="btn btn-secondary"
+                                     data-bs-dismiss="modal">Close</button>
+                                 <button type="button"
+                                     class="btn btn-primary">Save changes</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Modal end -->
+
+                    <div class="seller col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/snow_peace.png" alt="" class="product-img"  style="height: 240px;" data-bs-toggle="modal"
+                                data-bs-target="#best2">
+                             <h2 class="product-title">Snow Peace</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$11.89</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                    </div>
+                   <!-- Modal -->
+                   <div class="modal fade" id="best2" tabindex="-1"
+                   aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <h1 class="modal-title fs-5"
+                                   id="exampleModalLabel">Product detail</h1>
+                               <button type="button" class="btn-close"
+                                   data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                               <div class="row">
+                                   <div class="new col-lg-6 col-sm-6">
+                                       <img class="card-img-top"
+                                           src="Images/Vegetable/snow_peace.png"
+                                           alt="Title" />
+                                       <div class="card-body">
+
+                                       </div>
+                                   </div>
+                                   <div class="new col-sm-6">
+
+                                       <div class="card-body">
+                                           <h1 class="card-title">Snow Peace</h1>
+                                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button"
+                                   class="btn btn-secondary"
+                                   data-bs-dismiss="modal">Close</button>
+                               <button type="button"
+                                   class="btn btn-primary">Save changes</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Modal end -->
+
+                    <div class="seller col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/tomato.png" alt="" class="product-img"  style="height: 240px;" data-bs-toggle="modal"
+                                data-bs-target="#best3">
+                             <h2 class="product-title">Tomato</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$14.00</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+                  
+                     <!-- Modal -->
+                   <div class="modal fade" id="best3" tabindex="-1"
+                   aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <h1 class="modal-title fs-5"
+                                   id="exampleModalLabel">Product detail</h1>
+                               <button type="button" class="btn-close"
+                                   data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                               <div class="row">
+                                   <div class="new col-lg-6 col-sm-6">
+                                       <img class="card-img-top"
+                                           src="Images/Vegetable/tomato.png"
+                                           alt="Title" />
+                                       <div class="card-body">
+
+                                       </div>
+                                   </div>
+                                   <div class="new col-sm-6">
+
+                                       <div class="card-body">
+                                           <h1 class="card-title">Tomato</h1>
+                                           <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button"
+                                   class="btn btn-secondary"
+                                   data-bs-dismiss="modal">Close</button>
+                               <button type="button"
+                                   class="btn btn-primary">Save changes</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Modal end -->
+                   
+                </div>
+            </div>
+        </section>
+        <!-- Best Seller Section End  -->
+       
+        <!-- tranding food -->
+ 
+         <div>
+            <h1 class="text-center mt-5" id="gallery"    style="margin-top: 20px;">Upcoming <span style="color: green;">Products</span></h1>
+        </div>
+        <div class="container12" id="gallery">
+           <div class="row" >
+           
+             <div id="slide">
+            <div class="item" style="background-image: url(Images/slider/fruit11.jpg)">
+                <div class="content">
+                    <div class="name">Orange & Strawberry</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, cumque!</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Images/slider/fruit112.jpg);">
+                <div class="content">
+                    <div class="name">Grapes</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Images/slider/spice111.jpg);">
+                <div class="content">
+                    <div class="name">Mix Spices</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Images/slider/spices1112.jpg);">
+                <div class="content">
+                    <div class="name">Mix Spices</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Images/slider/vege11.jpg);">
+                <div class="content">
+                    <div class="name">Mix Vegetable</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Images/slider/vege112.jpg);">
+                <div class="content">
+                    <div class="name">Mix Vegetable</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+        </div></div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>  
+
+        <!-- tranding food -->
+
+        <!-- Hot Deals Section Started  -->
+        <section class="Product" id="hotdeal"  style="margin-top: -100px;">
+
+            <div class="container" id="deal">
+                <div class="row">
+
+                    <h1 class="h1 text-center mt-5" style="font-size: 45px;">Hot
+                        <span style="color: green;">Deals</span></h1>
+                    <h6 class="h6 text-center "
+                        style="color: green; font-weight: 500;">Be Healthy
+                        Organic Food</h6>
+
+                    <div class="col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/paprica.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#deal"  style="height: 240px;">
+                             <h2 class="product-title">Paprica</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$79.5</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deal" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/paprica.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Paprica</h1>
+                                                <p class="card-text">Lorem ipsum
+                                                    dolor sit amet consectetur
+                                                    adipisicing elit. Possimus,
+                                                    corporis!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/spices/red_chilli.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#deal1"  style="height: 240px;">
+                             <h2 class="product-title">Red Chilli</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$79.5</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deal1" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/spices/red_chilli.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Red Chilli</h1>
+                                                <p class="card-text">Lorem ipsum
+                                                    dolor sit amet consectetur
+                                                    adipisicing elit. Possimus,
+                                                    corporis!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/snow_peace.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#deal2"  style="height: 240px;">
+                             <h2 class="product-title">Snow Peace</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$79.5</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deal2" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/snow_peace.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Snow Peace</h1>
+                                                <p class="card-text">Lorem ipsum
+                                                    dolor sit amet consectetur
+                                                    adipisicing elit. Possimus,
+                                                    corporis!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                    <div class="col-lg-3 col-sm-6 col-6 mt-5">
+                        <div class="card text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+
+                            <div class="card-body">
+                                <img src="Images/Vegetable/tomato.png" alt="" class="product-img" data-bs-toggle="modal"
+                                data-bs-target="#deal3"  style="height: 240px;">
+                             <h2 class="product-title">Tomato</h2>
+                                  <span class="product-price"  style="margin-left: -10px; font-size: 20px;">$79.5</span>
+                                      <i class='bx bx-shopping-bag add-cart' style="margin-left: 150px; font-size: 20px;"></i>
+                                      
+                              
+                            </div>
+
+                        </div>
+
+                        <!-- Modal -->
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deal3" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5"
+                                        id="exampleModalLabel">Product detail</h1>
+                                    <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="Product1 col-lg-6 col-sm-6">
+                                            <img class="card-img-top"
+                                                src="Images/Vegetable/tomato.png"
+                                                alt="Title" />
+                                            <div class="card-body">
+
+                                            </div>
+                                        </div>
+                                        <div class="Product1 col-lg-6 col-sm-6">
+
+                                            <div class="card-body">
+                                                <h1 class="card-title">Tomato</h1>
+                                                <p class="card-text">Lorem ipsum
+                                                    dolor sit amet consectetur
+                                                    adipisicing elit. Possimus,
+                                                    corporis!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button"
+                                        class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+
+                </div>
+            </div>
+
+        </section>
+        <!-- Hot Deals Section   -->
+
+        <!-- about section here -->
+
+        <h1 class="text-center"  id="about" style="font-size: 45px; margin-top: 160px;">About
+            <span style="color: green;">Us</span></h1>
+        <section class="two-col-sec section" style="margin-top: -120px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class=" col-lg-5 col-sm-12 col-12">
+                        <div class="about-img mt-5">
+                            <img style="height: 500px; margin-top: -15px;"
+                                src="Images/Vegetable/vege 3.png" alt>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-sm-12 col-12">
+                        <div class="organic">
+                            <h2 style="font-size: 60px; margin-left: 50px;">Organic
+                                Food</h2>
+                            <p style="margin-left: 50px;">Organic farming is the
+                                production of food without the use of synthetic
+                                chemicals or genetically modified components.
+                                Organic foods are not necessarily completely
+                                chemical free, but the pesticide residues will
+                                be considerably lower than those found in
+                                produce manufactured with synthetic chemicals.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 2 -->
+        <section class="two-col-sec section pt-0" style="margin-top: -140px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-sm-12 col-12 order-lg-1 order-2">
+                        <div class="sec-text">
+                            <h2 style="font-size: 60px; margin-left: 40px;"
+                                class="xxl-title">Healthy Food</h2>
+                            <p style="margin-left: 40px;">It helps us in various
+                                spheres of life. Healthy food does not only
+                                impact our physical health but mental health
+                                too. When we intake healthy fruits and
+                                vegetables that are full of nutrients, we reduce
+                                the chances of diseases. For instance, green
+                                vegetables help us to maintain strength and
+                                vigor.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-12 col-12 order-lg-2 order-1">
+                        <div class="sec-img">
+                            <img style="height: 450px; "
+                                src="Images/fruits/Fruits.png" alt>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about section end -->
+
+        <!-- contact us  -->
+        <section class="contact"  id="contact">
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Exercitationem numquam id reprehenderit, sunt laudantium
+                    enim possimus repellat debitis et quis!</p>
+            </div>
+            <div class="container">
+                <div class="contactInfo">
+                    <div class="box">
+                        <div class="icon"><ion-icon name="location-outline"></ion-icon></div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>402671 Sugar Camp Road,<br>Owatonna,Minnesota,<br>55025060</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><ion-icon name="call-outline"></ion-icon></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>000-000-0000</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>wrub7d78i0e@temporary-mail</p>
+                        </div>
+                    </div>
+                    <h2 class="txt">Connect with us</h2>
+                    <ul class="sci">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </div>
+
+                <div class="contactForm">
+                    <form>
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name required="required" id="fullname">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name required="required" id="email">
+                            <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <textarea required="required" id="message"></textarea >
+                            <span>Type your Message...</span>
+                        </div>
+                        <div class="inputBox" >
+                            <input type="submit"  onclick="send()" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact us ends here -->
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"></script>
+
+             <!-- validate  -->
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+            <!-- sweet alert  -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+           
+            
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- cdn  -->
+        <script type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script src="assets/js/jquery-3.5.1.min.js"></script>
+        <!-- bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+
+        <!-- fontawesome  -->
+        <script src="assets/js/font-awesome.min.js"></script>
+
+        <!-- swiper slider  -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!-- mixitup -- filter  -->
+        <script src="assets/js/jquery.mixitup.min.js"></script>
+
+        <!-- fancy box  -->
+        <script src="assets/js/jquery.fancybox.min.js"></script>
+
+        <!-- parallax  -->
+        <script src="assets/js/parallax.min.js"></script>
+
+        <!-- gsap  -->
+        <script src="assets/js/gsap.min.js"></script>
+
+        <!-- scroll trigger  -->
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <!-- scroll to plugin  -->
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <!-- rellax  -->
+        <!-- <script src="assets/js/rellax.min.js"></script> -->
+        <!-- <script src="assets/js/rellax-custom.js"></script> -->
+        <!-- smooth scroll  -->
+        <script src="assets/js/smooth-scroll.js"></script>
+        <!-- custom js  -->
+        <script src="main.js"></script>
+        <!-- typecdn -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <script>
+            AOS.init();
+          </script>
+
+        <script>
+
+
+           // Show hide section started 
+$('.fruit').show()
+$('.spice').hide()
+$('.vegetable').hide()
+
+function fruit() {
+  $('.fruit').show()
+  $('.vegetable').hide()
+  $('.spice').hide()
+}
+
+function vegetable() {
+  $('.vegetable').show()
+  $('.fruit').hide()
+  $('.spice').hide()
+}
+
+function spice() {
+  $('.spice').show()
+  $('.vegetable').hide()
+  $('.fruit').hide()
+}
+// Show hide section end 
+
+//    function send(){
+
+//     var user = document.getElementById('fullname').value
+//     var useremail = document.getElementById('email').value
+//     var usermessage = document.getElementById('message').value
+//    }
+
+//    if( user == "" || useremail == "" || usermessage == "") {
+
+//    }
+
+//    else{
+//     localStorage.setItem("fullname", user)
+//     localStorage.setItem("email", useremail)
+//     localStorage.setItem("message", usermessage)
+
+//     alert("Your Message has been Submitted")
+//    }
+
+
+//  Element to contain animated typing 
+
+
+var typed = new Typed('#element', {
+    strings: ['<i>Organic </i>Flavour.', '<i>Healthy Food.</i>',''],
+    typeSpeed: 70,
+    loop:true
+});
+
+
+    </script>
+
+    </body>
+
+</html>

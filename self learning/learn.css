@@ -1,0 +1,70 @@
+/* how to style button level 2 */
+/* .a{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 35px;
+    margin-right: 20px;
+    border-style: solid; */
+/* } */
+.tweet{
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    border-color: #2881e6;
+    background-color: #2174d3;
+    border: none;
+    width: 70px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tweet:hover{
+    box-shadow: 0px 3px 10px #808080c0;
+    transition:box-shadow 0.15s ;
+}
+
+.tweet:active{
+    opacity: 0.8;
+transition: opacity 0.15s;
+}
+
+.subscribe{
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
+    width: 110px;
+    height:35px;  
+    transition: opacity 0.15s;
+}
+/* adding hover and effects */
+.subscribe:hover {
+    opacity:0.8;
+}
+
+.subscribe:active{
+    opacity: 0.5;
+}
+
+
+.join{ cursor: pointer;
+    width:60px;
+    height: 40px;
+    background-color: white;
+    border-color:#0061d3;
+    border-style: solid;
+    color: #0061d3;
+    border-radius: 1px;
+    border-width: 1px;
+    transition: background-color 0.15s,opacity 0.15s;
+}
+.join:hover{
+    background-color: blue;
+    color: white;
+}
+
+.join:active{
+    opacity: 0.6;
+}
